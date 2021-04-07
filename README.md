@@ -30,6 +30,9 @@ kafka-topics --bootstrap-server localhost:9092 --create --topic < nome_topico >
 ### -Deletar tópico (Não funciona no Windows) 
 kafka-topics --bootstrap-server localhost:9092 --topic < nome_topico > --delete
 
+#Criar tópico com Replica
+kafka-topics --bootstrap-server localhost:9092 --topic < nome_topico > --create --partitions 3 --replication-factor 1
+
 ## Mensagem 
 
 ### -Enviar mensagem via linha de comando:
@@ -53,3 +56,7 @@ kafka-console-producer --broker-list 127.0.0.1:9092 --topic < nome_topico > --pr
 ### -Consumir mensagens via linha de comando sem mostrar a Chave:
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic < nome_topico > --property print.key-false --property key.separator-,
 
+### -OBS
+
+-Para utilizar um Topico e suas Replicas, coloque mais localhosts no bootstrap-server,Ex:
+                kafka-console-producer --broker-list localhost:9092,localhost:9093 --topic < nome_topico >
