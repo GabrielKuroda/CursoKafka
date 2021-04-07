@@ -47,9 +47,9 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic < nome_topico >
 ### Mostrar grupos
 kafka-consumer-groups --bootstrap-server localhost:9092 --list
 
-#Enviar mensagem via linha de comando com Chave:
+### Enviar mensagem via linha de comando com Chave:
 kafka-console-producer --broker-list 127.0.0.1:9092 --topic < nome_topico > --property parse.key-true --property key.separator-,
 
-#Consumir mensagens via linha de comando sem mostrar a Chave:
+### Consumir mensagens via linha de comando sem mostrar a Chave:
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic < nome_topico > --property print.key-false --property key.separator-,
 
